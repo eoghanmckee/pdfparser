@@ -28,7 +28,7 @@ func (file File) Extract(output *Output, isCommand bool) {
 		}
 
 		// dump file
-		output.DumpFile(f, file_data)
+		// output.DumpFile(f, file_data)
 	} else if p, ok := d.GetString("P"); ok {
 		if f, ok := d.GetString("F"); ok {
 			fmt.Fprintf(output.Files, "%s:%s\n", unknownHash, f)

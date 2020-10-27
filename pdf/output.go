@@ -49,10 +49,10 @@ func NewOutput(directory string) (output *Output, err error) {
 		return
 	}
 
-	// create raw.pdf file
-	if output.Raw, err = os.Create(path.Join(directory, "raw.pdf")); err != nil {
-		return
-	}
+	// // create raw.pdf file
+	// if output.Raw, err = os.Create(path.Join(directory, "raw.pdf")); err != nil {
+	// 	return
+	// }
 
 	// create text content file in output dir
 	if output.Text, err = os.Create(path.Join(directory, "contents.txt")); err != nil {
@@ -79,9 +79,9 @@ func (output *Output) Close() {
 	if output.Javascript != nil {
 		output.Javascript.Close()
 	}
-	if output.Raw != nil {
-		output.Raw.Close()
-	}
+	// if output.Raw != nil {
+	// 	output.Raw.Close()
+	// }
 	if output.Text != nil {
 		output.Text.Close()
 	}
