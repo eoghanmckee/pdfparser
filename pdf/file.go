@@ -19,13 +19,13 @@ func (file File) Extract(output *Output, isCommand bool) {
 		}
 	} else if ef, ok := d.GetDictionary("EF"); ok {
 		// get the file data
-		file_data, _ := ef.GetStream("F")
+		// file_data, _ := ef.GetStream("F")
 
 		// get the file path
-		f, ok := d.GetString("F")
-		if !ok {
-			f = unknownHash
-		}
+		// f, ok := d.GetString("F")
+		// if !ok {
+		// 	f = unknownHash
+		// }
 
 		// dump file
 		// output.DumpFile(f, file_data)
