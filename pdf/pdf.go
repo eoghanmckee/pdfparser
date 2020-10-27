@@ -24,7 +24,7 @@ func Parse(file_path string, password string, output_dir string) error {
 	parser := NewParser(file, output)
 
 	// load the pdf
-	Debug("Loading xref")
+	Debug("Loading xref HELLO")
 	if err := parser.Load(password); err != nil {
 		return err
 	}
