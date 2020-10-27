@@ -17,18 +17,6 @@ func (file File) Extract(output *Output, isCommand bool) {
 		if f, ok := d.GetString("F"); ok {
 			fmt.Fprintln(output.URLs, f)
 		}
-	//} else if ef, ok := d.GetDictionary("EF"); ok {
-		// get the file data
-		// file_data, _ := ef.GetStream("F")
-
-		// get the file path
-		// f, ok := d.GetString("F")
-		// if !ok {
-		// 	f = unknownHash
-		// }
-
-		// dump file
-		// output.DumpFile(f, file_data)
 	} else if p, ok := d.GetString("P"); ok {
 		if f, ok := d.GetString("F"); ok {
 			fmt.Fprintf(output.Files, "%s:%s\n", unknownHash, f)
