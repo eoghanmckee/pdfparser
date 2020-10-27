@@ -17,7 +17,7 @@ func (file File) Extract(output *Output, isCommand bool) {
 		if f, ok := d.GetString("F"); ok {
 			fmt.Fprintln(output.URLs, f)
 		}
-	} else if ef, ok := d.GetDictionary("EF"); ok {
+	//} else if ef, ok := d.GetDictionary("EF"); ok {
 		// get the file data
 		// file_data, _ := ef.GetStream("F")
 
