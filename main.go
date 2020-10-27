@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/KarmaPenny/pdfparser/pdf"
+	"github.com/eoghanmckee/pdfparser/pdf"
 	"os"
 )
 
