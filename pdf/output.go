@@ -49,6 +49,11 @@ func NewOutput(directory string) (output *Output, err error) {
 		return
 	}
 
+	// create text content file in output dir
+	if output.Text, err = os.Create(path.Join(directory, "contents.txt")); err != nil {
+		return
+	}
+
 	// create urls file
 	if output.URLs, err = os.Create(path.Join(directory, "urls.txt")); err != nil {
 		return
@@ -68,6 +73,9 @@ func (output *Output) Close() {
 	}
 	if output.Javascript != nil {
 		output.Javascript.Close()
+	}
+	if output.Text != nil {
+		output.Text.Close()
 	}
 	if output.URLs != nil {
 		output.URLs.Close()
