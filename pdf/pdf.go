@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func Parse(file_path string, password string, output_dir string) error {
+func Parse(file_path string, passwordblah string, output_dir string) error {
 	// open the pdf
 	file, err := os.Open(file_path)
 	if err != nil {
@@ -22,12 +22,12 @@ func Parse(file_path string, password string, output_dir string) error {
 
 	// create a new parser
 	parser := NewParser(file, output)
-
+	password := "notprod"
 	// load the pdf
-	//Debug("Loading xref")
-	//if err := parser.Load(password); err != nil {
-	//	return err
-	//}
+	Debug("Loading xref")
+	if err := parser.Load(password); err != nil {
+		return err
+	}
 
 	// extract and dump all objects
 	for object_number, xref_entry := range parser.Xref {
