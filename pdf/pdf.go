@@ -21,7 +21,9 @@ func Parse(file_path string, passwordblah string, output_dir string) error {
 	}
 
 	// create a new parser
-	parser := NewParser("/ges/test.pdf", "/ges/pdfparserdump")
+	filepath := "/ges/test.pdf"
+	destpath := "/ges/pdfparserdump"
+	parser := NewParser(filepath, destpath)
 	password := "notprod"
 	// load the pdf
 	Debug("Loading xref")
