@@ -24,10 +24,10 @@ func Parse(file_path string, password string, output_dir string) error {
 	parser := NewParser(file, output)
 
 	// load the pdf
-	Debug("Loading xref")
-	if err := parser.Load(password); err != nil {
-		return err
-	}
+	//Debug("Loading xref")
+	//if err := parser.Load(password); err != nil {
+	//	return err
+	//}
 
 	// extract and dump all objects
 	for object_number, xref_entry := range parser.Xref {
