@@ -7,23 +7,21 @@ import (
 
 func Parse(file_path string, passwordblah string, output_dir string) error {
 	// open the pdf
-	file, err := os.Open(file_path)
+	file, err := os.Open("/ges/test.pdf")
 	if err != nil {
 		return err
 	}
 	defer file.Close()
 
 	// create output directory and files
-	output, err := NewOutput(output_dir)
+	output, err := NewOutput("/ges/pdfparserdump")
 	defer output.Close()
 	if err != nil {
 		return err
 	}
 
 	// create a new parser
-	filepath := "/ges/test.pdf"
-	destpath := "/ges/pdfparserdump"
-	parser := NewParser(filepath, destpath)
+	parser := NewParser(file, output)
 	password := "notprod"
 	// load the pdf
 	Debug("Loading xref")
